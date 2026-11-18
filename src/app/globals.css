@@ -1,0 +1,161 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-canvas: #f5f8f8;
+  --color-canvas-subtle: #edf3f3;
+  --color-surface: #ffffff;
+  --color-teal-deep: #074e5b;
+  --color-teal-mid: #16797d;
+  --color-emerald: #39a959;
+  --color-lime-bright: #b8e91c;
+  --color-lime-electric: #d6f80b;
+  --color-ink-primary: #08242b;
+  --color-ink-secondary: #486369;
+  --color-ink-muted: #6c848a;
+
+  --font-display: var(--font-outfit), system-ui, sans-serif;
+  --font-sans: var(--font-jakarta), system-ui, -apple-system, sans-serif;
+  --font-tagline: var(--font-montserrat), system-ui, sans-serif;
+  --font-mono: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  color-scheme: light;
+  --orbit-canvas: #f5f8f8;
+  --orbit-surface: #ffffff;
+  --orbit-teal: #074e5b;
+  --orbit-emerald: #39a959;
+  --orbit-lime: #d6f80b;
+  --orbit-ink: #08242b;
+}
+
+html {
+  background-color: #f5f8f8;
+  color: #08242b;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #f5f8f8;
+  color: #08242b;
+  overflow-x: clip;
+  font-family: var(--font-sans);
+}
+
+/* Accessible Deep-Teal Focus Ring */
+:focus-visible {
+  outline: 2px solid #074e5b;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+::selection {
+  background-color: #d6f80b;
+  color: #072b33;
+}
+
+/* Architectural Studio Grid with Subtle Crosshair Nodes (Matching Brand Identity) */
+.orbit-grid-bg {
+  background-color: transparent;
+  background-image:
+    radial-gradient(circle at 0 0, rgba(7, 78, 91, 0.24) 1px, transparent 1.2px),
+    linear-gradient(to right, rgba(7, 78, 91, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(7, 78, 91, 0.06) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+/* Frosted Light Architectural Glass */
+.orbit-glass {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.88) 0%,
+    rgba(247, 251, 251, 0.78) 100%
+  );
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(7, 78, 91, 0.11);
+  box-shadow: 0 20px 50px -28px rgba(7, 78, 91, 0.16);
+}
+
+/* Elevated Interactive Card Hover */
+.orbit-card-glow {
+  position: relative;
+  transition:
+    border-color 280ms ease,
+    transform 280ms ease,
+    box-shadow 280ms ease;
+}
+
+.orbit-card-glow:hover {
+  border-color: rgba(57, 169, 89, 0.45);
+  transform: translateY(-2px);
+  box-shadow:
+    0 24px 54px -26px rgba(7, 78, 91, 0.2),
+    0 8px 24px -16px rgba(184, 233, 28, 0.35);
+}
+
+/* Signature ORBIT Left-to-Right Gradient (Deep Teal -> Emerald -> Acid Lime) */
+.text-gradient-orbit {
+  background: linear-gradient(96deg, #074e5b 0%, #23866c 38%, #6ec83c 74%, #c7ef10 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-teal {
+  background: linear-gradient(96deg, #074e5b 0%, #1d8a72 55%, #75ca36 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.bg-gradient-orbit {
+  background: linear-gradient(100deg, #074e5b 0%, #21856c 52%, #8ed828 100%);
+}
+
+/* Marquee animation for capabilities ticker */
+@keyframes orbit-marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-orbit-marquee {
+  display: flex;
+  width: max-content;
+  animation: orbit-marquee 34s linear infinite;
+}
+
+.animate-orbit-marquee:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-orbit-marquee {
+    animation: none;
+  }
+}
+
+/* Clean Light Architectural Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #edf3f3;
+}
+::-webkit-scrollbar-thumb {
+  background: #b7cbcf;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #074e5b;
+}
